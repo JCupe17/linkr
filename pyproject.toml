@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "linkr"
+version = "0.1.0"
+description = "Project to develop a plugin for linkR"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.2.0"
+numpy = "^1.26.4"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.3"
+pyarrow = "^15.0.0"
+plotly = "^5.19.0"
+nbformat = "^5.9.2"
+seaborn = "^0.13.2"
+dash = "^2.16.1"
+
+[tool.poetry.group.formatters.dependencies]
+isort = "^5.13.2"
+black = "^24.4.0"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.2"
+pandas-stubs = "^2.2.1.240316"
+
+
+# CONFIGURATIONS
+
+[tool.black]
+# source line length
+line-length = 120
+
+[tool.isort]
+# same length as black
+line_length = 120
+# associate isort with black
+profile = "black"
+
+[tool.pylint.MASTER]
+# list false positives
+disable = [
+    'invalid-name',
+    'too-few-public-methods',
+    'too-many-arguments',
+    'too-many-instance-attributes',
+    'too-many-locals',
+]
+# same lengthas Black
+max-line-length = 120
+# pydantic is not recognized yet
+extension-pkg-whitelist = "pydantic"
+
+[tool.poetry.group.checkers.dependencies]
+mypy = "^1.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
