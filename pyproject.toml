@@ -2,12 +2,11 @@
 name = "linkr"
 version = "0.1.0"
 description = "Project to develop a plugin for linkR"
-authors = ["Your Name <you@example.com>"]
+authors = ["Jean Cupe"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 pandas = "^2.2.0"
 numpy = "^1.26.4"
 requests = "^2.31.0"
@@ -52,6 +51,7 @@ disable = [
 max-line-length = 120
 # pydantic is not recognized yet
 extension-pkg-whitelist = "pydantic"
+
 
 [tool.poetry.group.checkers.dependencies]
 mypy = "^1.9.0"
